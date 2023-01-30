@@ -1,7 +1,8 @@
 package ru.netology.radio;
 
 public class Radio {
-    public int currentTrack;
+    private int currentTrack;
+    private int currentVolume;
 
     public int getCurrentTrack() {
         return currentTrack;
@@ -21,27 +22,25 @@ public class Radio {
 
     public void setNextTrack() {
 
-        if (currentTrack == 9) {
+        if (currentTrack != 9) {
+            currentTrack++;
+
+        } else {
             currentTrack = 0;
-            return;
         }
-        currentTrack = currentTrack + 1;
 
     }
 
 
     public void setPrevTrack() {
 
-        if (currentTrack == 0) {
+        if (currentTrack != 0) {
+            currentTrack--;
+        } else {
             currentTrack = 9;
-            return;
         }
-        currentTrack = currentTrack - 1;
-
     }
 
-
-    public int currentVolume;
 
     public int getCurrentVolume() {
         return currentVolume;
@@ -67,7 +66,7 @@ public class Radio {
     }
 
     public void decreaseVolume() {
-        if (currentVolume < 10) {
+        if (currentVolume > 0) {
             currentVolume = currentVolume - 1;
 
         }
