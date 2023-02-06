@@ -4,6 +4,7 @@ public class Radio {
     private int currentTrack;
     private int currentVolume;
 
+
     public int getCurrentTrack() {
         return currentTrack;
     }
